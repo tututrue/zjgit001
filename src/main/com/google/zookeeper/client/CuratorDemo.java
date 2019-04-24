@@ -70,10 +70,10 @@ public class CuratorDemo {
                     System.out.println(name + "--->child add" + event.getData());
                 }
                 case CHILD_REMOVED: {
-                    //System.out.println(name + "--->child removed" + event.getData());
+                    System.out.println(name + "--->child removed" + event.getData());
                 }
                 case CHILD_UPDATED: {
-                    //System.out.println(name + "child updated" + event.getData());
+                    System.out.println(name + "child updated" + event.getData());
                 }
             }
         });
