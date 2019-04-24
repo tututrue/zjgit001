@@ -36,7 +36,8 @@ public class CuratorDemo {
         String path = client.create().creatingParentContainersIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(fpath + "/001", "这谁顶得住啊".getBytes());
         System.out.println(path);
         NodeCache nodeCache = new NodeCache(client, path, false);
-        nodeCache.start(true);//设置为true,nodecache第一次启动时就立刻从zk中读取数据,保存在cache中
+        //设置为true,nodecache第一次启动时就立刻从zk中读取数据,保存在cache中
+        nodeCache.start(true);
         nodeCache.getListenable().addListener(() -> {
             System.out.println("node data updated.new data:" + new String(nodeCache.getCurrentData().getData()));
         });
