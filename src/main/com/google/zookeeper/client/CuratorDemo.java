@@ -23,7 +23,7 @@ public class CuratorDemo {
             connectString(server).
             sessionTimeoutMs(5000).
             retryPolicy((retryCount, elapsedTimeMs, sleeper) -> retryCount <= 3 && elapsedTimeMs <= 10000).
-            //namespace(fpath).//根路径
+            namespace(fpath).//根路径
                     build();
 
     public static void main(String[] args) throws Exception {
